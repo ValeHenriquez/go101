@@ -61,7 +61,7 @@ var name string
 name := ""
 ```
 
-#### Declaración en la misma linea
+### Declaración en la misma linea
 
 ```go
 size, country := 20000000, "Chile"
@@ -123,7 +123,6 @@ func main() {
 	b += 2
 	fmt.Println(b)
 	// declaración post-incremento y post-decremento: ++, --
-	// (no son una expresión sino una declaración)
 	var c = 3
 	c--
 	fmt.Println(c)
@@ -207,10 +206,6 @@ func main() {
 # Array
 
 ```go
-package main
-
-import "fmt"
-
 func main() {
     // Declarar e inicializar un array de enteros
     var numeros [5]int
@@ -227,6 +222,18 @@ func main() {
     // Declarar e inicializar un array de cadenas
     nombres := [3]string{"Alice", "Bob", "Charlie"}
     fmt.Println(nombres[1]) // Imprime "Bob"
+
+    arr := [5]int{1, 2, 3, 4, 5}
+
+    // Recorrer el array utilizando un bucle for
+    for i := 0; i < len(arr); i++ {
+        fmt.Println(arr[i])
+    }
+
+     // Recorrer el array utilizando un bucle for range
+    for index, value := range arr {
+        fmt.Printf("Índice: %d, Valor: %d\n", index, value)
+    }
 }
 ```
 
@@ -305,15 +312,11 @@ La convención para **exportar** funciones, variables, tipos y constantes a otro
 
 # Defer
 
-La declaración defer se utiliza para posponer la ejecución de una función hasta que la función que lo contiene haya terminado. La función pospuesta se ejecutará justo antes de que la función envolvente finalice, ya sea por una declaración return, un panic u otro motivo de salida.
+La declaración defer se utiliza para posponer la ejecución de una función hasta que la función que lo contiene haya terminado. La función pospuesta se ejecutará justo antes de que la función envolvente finalice, ya sea por una declaración return, un panic u otro motivo de salida. Ej: Lectura de archivos.
 
 ### Ejemplo
 
 ```go
-package main
-
-import "fmt"
-
 func main() {
 	fmt.Println("Inicio de la función main")
 
@@ -326,6 +329,7 @@ func main() {
 	fmt.Println("Fin de la función main")
 }
 ```
+
 
 # Struct
 
@@ -510,10 +514,6 @@ func main() {
 # Punteros
 
 ```go
-package main
-
-import "fmt"
-
 func main() {
     valor := 42
     puntero := &valor // Obtener la dirección de memoria de la variable 'valor'
@@ -521,6 +521,20 @@ func main() {
     fmt.Println("Valor:", valor)       // Imprime "Valor: 42"
     fmt.Println("Puntero:", puntero)   // Imprime la dirección de memoria
     fmt.Println("Valor en puntero:", *puntero) // Imprime el valor almacenado en la dirección apuntada por el puntero
+}
+```
+
+## Funciones que reciben punteros
+
+```go
+func modifyValue(x *int) {
+    *x = *x * 2
+}
+
+func main() {
+    value := 5
+    modifyValue(&value)
+    fmt.Println(value) // Imprimirá 10, ya que el valor original fue modificado dentro de la función
 }
 ```
 
