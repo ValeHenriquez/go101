@@ -6,8 +6,8 @@ Este repositorio contiene recursos y materiales para aprender los conceptos fund
 
 ## Contenido
 
-- **Ayudantía 1**: Introducción a Go y configuración del entorno.
-
+- [**Ayudantía 1**: Introducción a Go y configuración del entorno.](/ayu1/readme.md)
+- [**Ayudantía 2**: Fiber Rest API y Auth.](/ayu2/readme.md)
 
 *** 
 
