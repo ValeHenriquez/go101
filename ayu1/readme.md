@@ -559,14 +559,12 @@ func Restar(a, b int) int {
 
 **main.go:**
 ```go
-package math
+package main
 
-func Sumar(a, b int) int {
-    return a + b
-}
+import proyecto/math
 
-func Restar(a, b int) int {
-    return a - b
+func main(){
+    result:= math.Sumar(5,8)
 }
 ```
 
