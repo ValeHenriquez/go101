@@ -80,7 +80,7 @@ func DeleteTask(c *fiber.Ctx) error {
 		return c.Status(404).JSON(fiber.Map{"message": "Task not found"})
 	}
 
-	db.DB.Delete(&task) //Change delete field to true and assing deleted_at
+	db.DB.Delete(&task) //Change delete field to true and assign deleted_at
 	//db.DB.Unscoped().Delete(&task) //Unscoped() is used to delete permanently
 
 	return c.Status(200).JSON(fiber.Map{
