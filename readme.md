@@ -9,6 +9,7 @@ Este repositorio contiene recursos y materiales para aprender los conceptos fund
 -   [**Ayudantía 1**: Introducción a Go y configuración del entorno.](/ayu1/readme.md)
 -   [**Ayudantía 2**: Fiber Rest API y Auth.](/ayu2/readme.md)
 -   [**Ayudantía 3**: Microservicios y RabbitMQ.](/ayu3/readme.md)
+-   [**Ayudantía 4**: GraphQL.](/ayu4/readme.md)
 
 ---
 
